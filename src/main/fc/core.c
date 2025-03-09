@@ -1061,6 +1061,8 @@ void processRxModes(timeUs_t currentTimeUs)
         && !FLIGHT_MODE(GPS_RESCUE_MODE)
         // and either the alt_hold switch is activated, or are in failsafe landing mode
         && (IS_RC_MODE_ACTIVE(BOXPOSHOLD) || failsafeIsActive())
+        // and Position Hold didn't fail
+        && !posHoldFailure()
         // and we have Acc for self-levelling
         && sensors(SENSOR_ACC)
         // but not until throttle is raised
