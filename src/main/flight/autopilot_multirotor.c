@@ -310,7 +310,7 @@ bool positionControl(void)
                     efAxis->isStopping = false;                       // end the 'stopping' phase
                     if (ap.efAxis[LAT].isStopping == ap.efAxis[LON].isStopping) {
                         // when both axes have stopped moving, reset the sanity distance to 10m default
-                        ap.sanityCheckDistance = sanityCheckDistance(1000);
+                        ap.sanityCheckDistance = sanityCheckDistance(0);
                     }
                 }
             }
